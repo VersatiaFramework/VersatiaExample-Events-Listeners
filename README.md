@@ -12,14 +12,16 @@ Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExa
 [VersatiaExample-Events-Listeners] Greeter created
 [VersatiaExample-Events-Listeners] QuitListener created as a bean
 [VersatiaExample-Events-Listeners] JoinListener created, not a bean, Greeter injected
-(a player joins, in their chat) Welcome, Steve!
 (a player leaves) [VersatiaExample-Events-Listeners] Steve left
 ```
 
+A joining player reads `Welcome, Steve!` in their chat.
+
 ## Things to try
 
-- Add `@DisableVersatiaFeatures(registerListeners = true)` to `ListenersPlugin`: the listeners are
-  created no more and nobody greets anyone.
+- Add `@DisableVersatiaFeatures(registerListeners = true)` to `ListenersPlugin`: no listener is
+  registered and nobody greets anyone; `JoinListener` is created no more, while `QuitListener` is
+  still created as a bean.
 - Make `ListenersPlugin` implement `Listener` with an `@EventHandler`: the plugin instance is
   registered too.
 
