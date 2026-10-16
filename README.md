@@ -1,21 +1,20 @@
-    # VersatiaExample-Events-Listeners
+# VersatiaExample-Events-Listeners
 
-    Every class implementing `Listener` is registered when the plugin starts: a plain class gets its constructor parameters injected, a bean is registered with its bean instance.
+Every class implementing `Listener` is registered when the plugin starts: a plain class gets its constructor parameters injected, a bean is registered with its bean instance.
 
-    Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Event listeners](https://versatiaframework.github.io/VersatiaDocs/docs/events).
+Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Event listeners](https://versatiaframework.github.io/VersatiaDocs/docs/events).
 
-    **Start with** [`Listeners.kt`](src/main/kotlin/com/github/marcoral/versatia/example/listeners/Listeners.kt).
+**Start with** [`Listeners.kt`](src/main/kotlin/com/github/marcoral/versatia/example/listeners/Listeners.kt).
 
-    ## What the log shows
+## What the log shows
 
-    ```
-    [Greeter] created
-[QuitListener] created as a bean
-[JoinListener] created, not a bean, Greeter injected
-(a player joins) Welcome, Steve!
-(a player leaves) [QuitListener] Steve left
-    ```
-
+```
+[VersatiaExample-Events-Listeners] Greeter created
+[VersatiaExample-Events-Listeners] QuitListener created as a bean
+[VersatiaExample-Events-Listeners] JoinListener created, not a bean, Greeter injected
+(a player joins, in their chat) Welcome, Steve!
+(a player leaves) [VersatiaExample-Events-Listeners] Steve left
+```
 
 ## Things to try
 
@@ -26,8 +25,10 @@
 
 ## Building
 
-Requires JDK 21 and VersatiaAPI in your local Maven repository (`./gradlew publishToMavenLocal`
-in its checkout); running it requires a Paper 1.21.4 server with VersatiaCore installed.
+Requires JDK 21 and VersatiaStarter with what it exports (VersatiaAPI, the module APIs) in your
+local Maven repository (`./gradlew publishToMavenLocal` in each checkout; see
+[Building the framework](https://versatiaframework.github.io/VersatiaDocs/docs/contributing/building));
+running it requires a Paper 1.21.4 server with VersatiaCore installed.
 
 ```bash
 ./gradlew build
