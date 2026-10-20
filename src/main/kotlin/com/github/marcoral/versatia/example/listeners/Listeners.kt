@@ -1,6 +1,7 @@
 package com.github.marcoral.versatia.example.listeners
 
 import com.github.marcoral.versatia.di.LocalBean
+import java.util.logging.Logger
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -8,18 +9,18 @@ import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerQuitEvent
 
 @LocalBean
-class Greeter(plugin: ListenersPlugin) {
+class Greeter(logger: Logger) {
     init {
-        plugin.logger.info("Greeter created")
+        logger.info("Greeter created")
     }
 
     fun greeting(player: Player) = "Welcome, ${player.name}!"
 }
 
 /** Not a bean: created like one, with `Greeter` injected, and registered because it is a `Listener`. */
-class JoinListener(private val greeter: Greeter, plugin: ListenersPlugin) : Listener {
+class JoinListener(private val greeter: Greeter, logger: Logger) : Listener {
     init {
-        plugin.logger.info("JoinListener created, not a bean, Greeter injected")
+        logger.info("JoinListener created, not a bean, Greeter injected")
     }
 
     @EventHandler
@@ -28,11 +29,11 @@ class JoinListener(private val greeter: Greeter, plugin: ListenersPlugin) : List
 
 /** A bean that is a listener is registered with the bean instance; other beans may inject it. */
 @LocalBean
-class QuitListener(private val plugin: ListenersPlugin) : Listener {
+class QuitListener(private val logger: Logger) : Listener {
     init {
-        plugin.logger.info("QuitListener created as a bean")
+        logger.info("QuitListener created as a bean")
     }
 
     @EventHandler
-    fun onQuit(event: PlayerQuitEvent) = plugin.logger.info("${event.player.name} left")
+    fun onQuit(event: PlayerQuitEvent) = logger.info("${event.player.name} left")
 }
