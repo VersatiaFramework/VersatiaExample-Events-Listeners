@@ -27,7 +27,7 @@ A joining player reads `Welcome, Steve!` in their chat.
 
 ## Building
 
-Requires JDK 21 and VersatiaStarter with what it exports (VersatiaAPI, the module APIs) in your
+Requires JDK 21 and VersatiaAPI in your
 local Maven repository (`./gradlew publishToMavenLocal` in each checkout; see
 [Building the framework](https://versatiaframework.github.io/VersatiaDocs/docs/contributing/building));
 running it requires a Paper 1.21.4 server with VersatiaCore installed.
