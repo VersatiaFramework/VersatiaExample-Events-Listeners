@@ -1,6 +1,6 @@
-package com.github.marcoral.versatia.example.listeners
+package dev.versatia.example.listeners
 
-import com.github.marcoral.versatia.di.LocalBean
+import dev.versatia.di.LocalBean
 import java.util.logging.Logger
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler

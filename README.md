@@ -2,9 +2,9 @@
 
 Every class implementing `Listener` is registered when the plugin starts: a plain class gets its constructor parameters injected, a bean is registered with its bean instance.
 
-Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Event listeners](https://versatiaframework.github.io/VersatiaDocs/docs/events).
+Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Event listeners](https://versatia.dev/docs/events).
 
-**Start with** [`Listeners.kt`](src/main/kotlin/com/github/marcoral/versatia/example/listeners/Listeners.kt).
+**Start with** [`Listeners.kt`](src/main/kotlin/dev/versatia/example/listeners/Listeners.kt).
 
 ## What the log shows
 
@@ -29,7 +29,7 @@ A joining player reads `Welcome, Steve!` in their chat.
 
 Requires JDK 21 and VersatiaAPI in your
 local Maven repository (`./gradlew publishToMavenLocal` in each checkout; see
-[Building the framework](https://versatiaframework.github.io/VersatiaDocs/docs/contributing/building));
+[Building the framework](https://versatia.dev/docs/contributing/building));
 running it requires a Paper 1.21.4 server with VersatiaCore installed.
 
 ```bash
