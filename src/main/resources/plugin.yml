@@ -1,7 +1,7 @@
 name: VersatiaExample-Events-Listeners
 version: '${version}'
 main: dev.versatia.example.listeners.ListenersPlugin
-api-version: '1.21'
+api-version: '26.3'
 author: Versatia
 description: Bukkit listeners registered automatically.
 # Kotlin classes come from VersatiaCore's class loader; do not list kotlin-stdlib here
